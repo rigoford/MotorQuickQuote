@@ -47,4 +47,23 @@ class Styling {
     static double getSizeScaledForHeight(BuildContext context, double size) {
     return size * (MediaQuery.of(context).size.height / _controlSizeHeight);
   }
+
+
+  static TextStyle getTestDrivePageHeaderTextStyle(BuildContext context) {
+    return TextStyle(
+        fontWeight: FontWeight.w600,
+        fontSize: getScaledFontSize(context, 16.0),
+        fontFamily: testDriveFontFamily,
+        letterSpacing: -0.3,
+        color: Styling.secondary500);
+  }
+
+  static TextStyle getTestDrivePageExplinationTextStyle(BuildContext context) {
+    return TextStyle(
+        fontWeight: FontWeight.w400,
+        fontSize: getScaledFontSize(context, 18.0),
+        fontFamily: testDriveFontFamily,
+        letterSpacing: -0.3,
+        color: Styling.secondary500);
+  }
 }

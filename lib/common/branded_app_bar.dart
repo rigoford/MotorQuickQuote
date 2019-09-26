@@ -17,7 +17,7 @@ class BrandedAppBar extends StatelessWidget implements PreferredSizeWidget {
       leading: Container(), // Disable to back button.
       primary: true,
       centerTitle: true,
-      elevation: 0.0,
+      elevation: 2.0,
 
       backgroundColor: Styling.white,
       title: SizedBox(child: Image.asset('assets/admiral_logo.png')),
