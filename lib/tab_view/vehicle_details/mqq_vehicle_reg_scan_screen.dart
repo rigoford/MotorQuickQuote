@@ -1,21 +1,24 @@
 // A screen that allows users to take a picture using a given camera.
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
-import 'package:motor_quick_quote/tab_view/profile/mqq_dln_results.dart';
+import 'package:motor_quick_quote/common/branded_app_bar.dart';
+import 'package:motor_quick_quote/common/styling.dart';
+import 'package:motor_quick_quote/tab_view/profile_creation/mqq_dln_results.dart';
+import 'package:motor_quick_quote/tab_view/vehicle_details/mqq_vehicle_search_results.dart';
 
-class TakePictureScreen extends StatefulWidget {
+class MQQVehicleRegScanScreen extends StatefulWidget {
   final CameraDescription camera;
 
-  const TakePictureScreen({
+  const MQQVehicleRegScanScreen({
     Key key,
     @required this.camera,
   }) : super(key: key);
 
   @override
-  TakePictureScreenState createState() => TakePictureScreenState();
+  MQQVehicleRegScanScreenState createState() => MQQVehicleRegScanScreenState();
 }
 
-class TakePictureScreenState extends State<TakePictureScreen> {
+class MQQVehicleRegScanScreenState extends State<MQQVehicleRegScanScreen> {
   CameraController _controller;
   Future<void> _initializeControllerFuture;
 
@@ -45,7 +48,7 @@ class TakePictureScreenState extends State<TakePictureScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Take a photograph')),
+      appBar: BrandedAppBar(),
       // Wait until the controller is initialized before displaying the
       // camera preview. Use a FutureBuilder to display a loading spinner
       // until the controller has finished initializing.
@@ -62,7 +65,11 @@ class TakePictureScreenState extends State<TakePictureScreen> {
         },
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.camera_alt),
+        backgroundColor: Styling.white,
+        child: Icon(
+          Icons.camera_alt,
+          color: Styling.primaryDark,
+        ),
         // Provide an onPressed callback.
         onPressed: () async {
           // Take the Picture in a try / catch block. If anything goes wrong,
@@ -71,9 +78,7 @@ class TakePictureScreenState extends State<TakePictureScreen> {
             // Ensure that the camera is initialized.
             await _initializeControllerFuture;
 
-            Navigator.push(context, new MaterialPageRoute(
-            builder: (context) => MQQDriverLicenceResultsPage()));
-           
+            Navigator.push(context, new MaterialPageRoute(builder: (context) => MQQVehicleSearchResultsPage()));
           } catch (e) {
             // If an error occurs, log the error to the console.
             print(e);

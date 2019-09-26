@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:motor_quick_quote/common/branded_app_bar.dart';
+import 'package:motor_quick_quote/common/styling.dart';
 import 'package:motor_quick_quote/tab_view/mqq_main_tab_view.dart';
-import 'package:motor_quick_quote/tab_view/profile/mqq_dln.dart';
-import 'package:motor_quick_quote/tab_view/profile/mqq_profile.dart';
+import 'package:motor_quick_quote/tab_view/profile_creation/mqq_dln.dart';
 
 class MQQLoginPage extends StatefulWidget {
   MQQLoginPage();
@@ -254,7 +254,7 @@ class _MQQLoginPageState extends State<MQQLoginPage>  {
           child: new RaisedButton(
             elevation: 5.0,
             shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0)),
-            color: Colors.blue,
+            color: Styling.primaryDark,
             child: _formMode == FormMode.LOGIN
                 ? new Text('Login',
                     style: new TextStyle(fontSize: 20.0, color: Colors.white))

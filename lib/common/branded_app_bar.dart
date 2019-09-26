@@ -11,7 +11,6 @@ class BrandedAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   /// Generates the default top bar including font awesome icon.
   Widget build(BuildContext context) {
-   
     // generate the app bar
     return AppBar(
       leading: Container(), // Disable to back button.
@@ -20,7 +19,7 @@ class BrandedAppBar extends StatelessWidget implements PreferredSizeWidget {
       elevation: 2.0,
 
       backgroundColor: Styling.white,
-      title: SizedBox(child: Image.asset('assets/admiral_logo.png')),
+      title: SizedBox(width: MediaQuery.of(context).size.width / 3, child: Image.asset('assets/admiral_logo.png')),
     );
   }
 }

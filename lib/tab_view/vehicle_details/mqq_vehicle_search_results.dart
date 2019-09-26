@@ -9,13 +9,19 @@ class MQQVehicleSearchResultsPage extends StatefulWidget {
 class _MQQVehicleSearchResultsPageState extends State<MQQVehicleSearchResultsPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold( body: Container(child: Center(child: MaterialButton(child: Text("This is the right vehicle!"), onPressed: () { _newQuotePressed(); },))));
+    return Scaffold(
+        body: Container(
+            child: Center(
+                child: MaterialButton(
+      child: Text("This is the right vehicle!"),
+      onPressed: () {
+        _newQuotePressed();
+      },
+    ))));
   }
-    
+
   void _newQuotePressed() {
     print("Accept vehicle button pressed");
-      Navigator.push(context, new MaterialPageRoute(
-            builder: (context) => MQQVehicleQuoteResults()
-          ));
+    Navigator.push(context, new MaterialPageRoute(builder: (context) => MQQVehicleQuoteResults()));
   }
 }

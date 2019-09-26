@@ -8,6 +8,10 @@ class MQQVehicleQuoteResults extends StatefulWidget {
 class _MQQVehicleQuoteResultsState extends State<MQQVehicleQuoteResults> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Container(child: Center(child: Text("Here is the quote page!"),)));
+    return Scaffold(
+        body: Container(
+            child: Center(
+      child: Text("Here is the quote page!"),
+    )));
   }
 }

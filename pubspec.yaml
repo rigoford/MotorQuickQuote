@@ -44,6 +44,9 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
    - assets/admiral_logo.png
+   - assets/circle_graphic.png
+   - assets/reg_graphic.png
+   - assets/scan_car.png
   #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -57,28 +60,8 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-fonts:
-     - family: Font Awesome 5 Pro Light
-       fonts:
-         - asset: fonts/fa-light-300.ttf
-     - family: Font Awesome 5 Pro
-       fonts:
-         - asset: fonts/fa-regular-400.ttf
-     - family: Font Awesome 5 Pro Solid
-       fonts:
-         - asset: fonts/fa-solid-900.ttf
-     - family: Facit
-       fonts:
-         - asset: fonts/facit-extralight.otf
-           weight: 100 
-         - asset: fonts/facit-light.otf
-           weight: 200 
-         - asset: fonts/facit-regular.otf
 
-         - asset: fonts/facit-semibold.otf
-           weight: 600
-         - asset: fonts/facit-bold.otf
-           weight: 700
+    
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

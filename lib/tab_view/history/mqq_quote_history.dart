@@ -11,18 +11,27 @@ class _MQQQuoteHistoryPageState extends State<MQQQuoteHistoryPage> {
   Widget build(BuildContext context) {
 
      final makeListTile = ListTile(
-      contentPadding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
       
+      contentPadding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 3.0),
+      leading: Container(
+          padding: EdgeInsets.only(right: 12.0, top: 10),
+          decoration: new BoxDecoration(
+              border: new Border(
+                  right: new BorderSide(width: 1.0, color: Styling.primaryDarker))),
+          child: (Column(children: <Widget>[
+            Text("BX52 PMV",style: TextStyle(color: Styling.primaryDarker, fontWeight: FontWeight.bold)), 
+            Text("Ford Ka",style: TextStyle(color: Styling.primaryDarker))
+            ] )),
+        ),
       title: Text(
-        "Quote:   10/08/2019",
-        style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+        "10/08/2019",
+        style: TextStyle(color: Styling.primaryDarker),
       ),
-      // subtitle: Text("Intermediate", style: TextStyle(color: Colors.white)),
 
       subtitle: Row(
         children: <Widget>[
-          Icon(Icons.linear_scale, color: Colors.yellowAccent),
-          Text("£250", style: TextStyle(color: Colors.white))
+          Icon(Icons.linear_scale, color: Styling.primaryDark),
+          Text("  £250", style: TextStyle(color: Styling.primaryDarker))
         ],
       ),
       trailing:
@@ -33,20 +42,20 @@ class _MQQQuoteHistoryPageState extends State<MQQQuoteHistoryPage> {
       elevation: 8.0,
       margin: new EdgeInsets.symmetric(horizontal: 10.0, vertical: 6.0),
       child: Container(
-        decoration: BoxDecoration(color: Styling.secondary200),
+        decoration: BoxDecoration(color: Styling.white),
         child: makeListTile,
       ),
     );
 
 
       return Container(
-      margin: EdgeInsets.only(top: 10),
+      color: Styling.secondary100,
       child:  Container(child:  Container(
-          padding: EdgeInsets.all(16.0),
+          padding: EdgeInsets.only(top:10, left: 10, right: 10),
           child: ListView.builder(
           scrollDirection: Axis.vertical,
           shrinkWrap: true,
-          itemCount: 4,
+          itemCount: 7,
           itemBuilder: (BuildContext context, int index) {
             return makeCard;
           },

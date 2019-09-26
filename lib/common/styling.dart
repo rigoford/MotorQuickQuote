@@ -61,7 +61,7 @@ class Styling {
   static TextStyle getTestDrivePageExplinationTextStyle(BuildContext context) {
     return TextStyle(
         fontWeight: FontWeight.w400,
-        fontSize: getScaledFontSize(context, 18.0),
+        fontSize: getScaledFontSize(context, 14.0),
         fontFamily: testDriveFontFamily,
         letterSpacing: -0.3,
         color: Styling.secondary500);
