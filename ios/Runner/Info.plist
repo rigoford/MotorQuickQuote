@@ -43,5 +43,9 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+    <key>NSCameraUsageDescription</key>
+    <string>Admiral Motor Quick Quote would like to use the camera to make your job easier!</string>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>Admiral Motor Quick Quote would like to use the camera to make your job easier!</string>
 </dict>
 </plist>
