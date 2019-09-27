@@ -30,7 +30,7 @@ class _MQQAssumptionsPageState extends State<MQQAssumptionsPage> {
                       ))),
               ListTile(
                 title: Text('Cover starts', style: titleStyle(),),
-                subtitle: Text('Firday 27 September 2019', style: subtitleStyle(),),
+                subtitle: Text('Friday 27 September 2019', style: subtitleStyle(),),
               ),
               ListTile(
                 title: Text('Level of cover', style: titleStyle(),),
