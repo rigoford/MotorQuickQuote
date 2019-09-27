@@ -146,20 +146,6 @@ class _MQQProfilePageState extends State<MQQProfilePage> {
     );
   }
 
-  Widget _buildGetInTouch(BuildContext context) {
-    return Container(
-      color: Theme.of(context).scaffoldBackgroundColor,
-      padding: EdgeInsets.only(top: 8.0),
-      child: Text(
-        "Address\n"
-            "39 Blunkett Avenue\n"
-            "Cardiff\n"
-            "South Glamorgan",
-        style: TextStyle(fontFamily: Styling.fontAwesomeProFontFamily, fontSize: Styling.getScaledFontSize(context, 16.0)),
-      ),
-    );
-  }
-
   Widget _buildAssumptions(BuildContext context, Size screenSize) {
     return
       Container(
@@ -276,15 +262,15 @@ class _MQQProfilePageState extends State<MQQProfilePage> {
           Container(
               child: ListView(
                 children: <Widget>[
-                  SizedBox(height: screenSize.height / 6.4),
+                  SizedBox(height: screenSize.height / 8.7),
                   _buildProfileImage(),
                   _buildFullName(),
                   _buildStatus(context),
                   _buildBio(context),
                   _buildSeparator(screenSize),
-                  SizedBox(height: 10.0),
+                  SizedBox(height: screenSize.height/20),
                   _buildAssumptions(context, screenSize),
-                  SizedBox(height: 8.0),
+                  SizedBox(height: screenSize.height/40),
                   _buildButtons(),
 
                 ],
