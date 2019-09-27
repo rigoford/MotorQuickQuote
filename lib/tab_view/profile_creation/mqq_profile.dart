@@ -17,7 +17,7 @@ class _MQQProfilePageState extends State<MQQProfilePage> {
   final String _posts = "24";
   Widget _buildCoverImage(Size screenSize) {
     return Container(
-      height: screenSize.height / 3.8,
+      height: screenSize.height / 3.9,
       decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage('assets/cover.jpg'),
