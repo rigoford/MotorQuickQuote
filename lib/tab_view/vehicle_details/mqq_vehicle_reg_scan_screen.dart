@@ -3,7 +3,6 @@ import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:motor_quick_quote/common/branded_app_bar.dart';
 import 'package:motor_quick_quote/common/styling.dart';
-import 'package:motor_quick_quote/tab_view/profile_creation/mqq_dln_results.dart';
 import 'package:motor_quick_quote/tab_view/vehicle_details/mqq_vehicle_search_results.dart';
 
 class MQQVehicleRegScanScreen extends StatefulWidget {

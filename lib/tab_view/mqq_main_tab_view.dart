@@ -55,6 +55,7 @@ class _MQQMainTabViewPageState extends State<MQQMainTabViewPage> with SingleTick
                     Icon(_vehicleDetailsIconData, size: Styling.getScaledFontSize(context, 20.0)),
                     Container(margin: EdgeInsets.only(top: 5.0)),
                     Text(
+                    
                       "New Vehicle Quote", 
                       style: TextStyle(fontSize: Styling.getScaledFontSize(context, 10.0)),
                     ),
