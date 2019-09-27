@@ -23,7 +23,7 @@ class _MQQVehicleSearchResultsPageState extends State<MQQVehicleSearchResultsPag
                   child: SizedBox(
                       width: MediaQuery.of(context).size.width * .8,
                       child: Text(
-                        "Vehicle Details Confirmation",
+                        "DVLA Vehicle Details Confirmation",
                         textAlign: TextAlign.center,
                         style: Styling.getTestDrivePageHeaderTextStyle(context),
                       ))),
@@ -80,21 +80,8 @@ class _MQQVehicleSearchResultsPageState extends State<MQQVehicleSearchResultsPag
                         elevation: 5.0,
                         shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0)),
                         color: Colors.blue,
-                        child: new Text('Accept', style: new TextStyle(fontSize: 20.0, color: Colors.white)),
+                        child: new Text('Confim', style: new TextStyle(fontSize: 20.0, color: Colors.white)),
                         onPressed: _newQuotePressed,
-                      ),
-                    )),
-              ),
-              Container(
-                child: new Padding(
-                    padding: EdgeInsets.fromLTRB(10.0, 15.0, 10.0, 0.0),
-                    child: SizedBox(
-                      height: 40.0,
-                      child: new RaisedButton(
-                        elevation: 5.0,
-                        shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0)),
-                        color: Colors.blue,
-                        child: new Text('Edit', style: new TextStyle(fontSize: 20.0, color: Colors.white)),
                       ),
                     )),
               ),
