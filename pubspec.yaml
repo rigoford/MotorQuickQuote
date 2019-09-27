@@ -48,6 +48,8 @@ flutter:
    - assets/reg_graphic.png
    - assets/licence_graphic.png
    - assets/scan_car.png
+   - assets/dave.png
+   - assets/cover.jpg
   #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
