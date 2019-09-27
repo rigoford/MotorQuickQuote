@@ -10,14 +10,14 @@ class MQQProfilePage extends StatefulWidget {
 
 class _MQQProfilePageState extends State<MQQProfilePage> {
   @override
-  final String _fullName = "Dave Plunkett";
+  final String _fullName = "Sarah Morgan";
   final String _bio =
-      "\"Good morning Dave, Here's your profile:\"";
+      "\"Good morning Sarah, Here's your profile:\"";
   final String _cars = "12";
   final String _posts = "24";
   Widget _buildCoverImage(Size screenSize) {
     return Container(
-      height: screenSize.height / 2.6,
+      height: screenSize.height / 4.1,
       decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage('assets/cover.jpg'),
@@ -49,9 +49,9 @@ class _MQQProfilePageState extends State<MQQProfilePage> {
 
   Widget _buildFullName() {
     TextStyle _nameTextStyle = TextStyle(
-      fontFamily: 'Roboto',
+      fontFamily: Styling.fontAwesomeProFontFamily,
       color: Styling.primaryLight,
-      fontSize: 28.0,
+      fontSize: Styling.getScaledFontSize(context,  28.0),
       fontWeight: FontWeight.w700,
     );
 
@@ -71,62 +71,17 @@ class _MQQProfilePageState extends State<MQQProfilePage> {
     );
   }
 
-  Widget _buildStatItem(String label, String count) {
-    TextStyle _statLabelTextStyle = TextStyle(
-      fontFamily: 'Roboto',
-      color: Colors.black,
-      fontSize: 16.0,
-      fontWeight: FontWeight.w200,
-    );
-
-    TextStyle _statCountTextStyle = TextStyle(
-      color: Colors.black54,
-      fontSize: 24.0,
-      fontWeight: FontWeight.bold,
-    );
-
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        Text(
-          count,
-          style: _statCountTextStyle,
-        ),
-        Text(
-          label,
-          style: _statLabelTextStyle,
-        ),
-      ],
-    );
-  }
-
-  Widget _buildStatContainer() {
-    return Container(
-      height: 60.0,
-      margin: EdgeInsets.only(top: 8.0),
-      decoration: BoxDecoration(
-        color: Color(0xFFEFF4F7),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: <Widget>[
-          _buildStatItem("Cars Scanned", _cars),
-          _buildStatItem("Quote History", _posts),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildBio(BuildContext context) {
+  Widget _buildBio(BuildContext context, screenSize) {
     TextStyle bioTextStyle = TextStyle(
-      fontFamily: 'Spectral',
+      fontFamily: Styling.fontAwesomeProFontFamily,
       fontWeight: FontWeight.w400,//try changing weight to w500 if not thin
       fontStyle: FontStyle.italic,
       color: Color(0xFF799497),
-      fontSize: 16.0,
+      fontSize: Styling.getScaledFontSize(context, 16.0),
     );
 
     return Container(
+      height: screenSize,
       color: Theme.of(context).scaffoldBackgroundColor,
       padding: EdgeInsets.all(8.0),
       child: Text(
@@ -146,18 +101,57 @@ class _MQQProfilePageState extends State<MQQProfilePage> {
     );
   }
 
-  Widget _buildGetInTouch(BuildContext context) {
-    return Container(
-      color: Theme.of(context).scaffoldBackgroundColor,
-      padding: EdgeInsets.only(top: 8.0),
-      child: Text(
-        "Address\n"
-            "39 Blunkett Avenue\n"
-            "Cardiff\n"
-            "South Glamorgan",
-        style: TextStyle(fontFamily: Styling.fontAwesomeProFontFamily, fontSize: 16.0),
-      ),
-    );
+  Widget _buildAssumptions(BuildContext context, Size screenSize) {
+    return
+      Container(
+        height: screenSize.height/4,
+      child: ListView(
+          children: <Widget>[
+            Container(
+                color: Theme.of(context).scaffoldBackgroundColor,
+                margin: EdgeInsets.all(20),
+                child: SizedBox(
+                    width: screenSize.width * .8,
+                    child: Text(
+                      "Driving License Details",
+                      textAlign: TextAlign.center,
+                      style: Styling.getTestDrivePageHeaderTextStyle(context),
+                    ))),
+            ListTile(
+              title: Text('Name', style: titleStyle(),),
+              subtitle: Text('MORGAN', style: subtitleStyle(),),
+            ),
+            ListTile(
+              title: Text('First Name', style: titleStyle(),),
+              subtitle: Text('SARAH MEREDYTH', style: subtitleStyle(),),
+            ),
+            ListTile(
+              title: Text('Date and place of birth', style: titleStyle(),),
+              subtitle: Text('11.03.1976 UNITED KINGDOM', style: subtitleStyle(),),
+            ),
+            ListTile(
+              title: Text('Date of issue', style: titleStyle(),),
+              subtitle: Text('19.01.2013', style: subtitleStyle(),),
+            ),
+            ListTile(
+              title: Text('Date of expiry', style: titleStyle(),),
+              subtitle: Text('18.01.2023', style: subtitleStyle(),),
+            ),
+            ListTile(
+              title: Text('Issued by', style: titleStyle(),),
+              subtitle: Text('DVLA', style: subtitleStyle(),),
+            ),
+            ListTile(
+              title: Text('Licence number', style: titleStyle(),),
+              subtitle: Text('MORGA753116SM9IL 35', style: subtitleStyle(),),
+            ),
+            ListTile(
+              title: Text('Address', style: titleStyle(),),
+              subtitle: Text('122 BURNS CRESCENT EDINGURGH EH1 9GP', style: subtitleStyle(),),
+            ),
+          ],
+        )
+      );
   }
 
   Widget _buildButtons() {
@@ -220,27 +214,33 @@ class _MQQProfilePageState extends State<MQQProfilePage> {
       body: Stack(
         children: <Widget>[
           _buildCoverImage(screenSize),
-          SafeArea(
-            child: SingleChildScrollView(
+          Container(
               child: Column(
                 children: <Widget>[
-                  SizedBox(height: screenSize.height / 6.4),
+                  SizedBox(height: screenSize.height / 40),
                   _buildProfileImage(),
                   _buildFullName(),
+                  SizedBox(height: screenSize.height/20),
                   _buildStatus(context),
-                  _buildStatContainer(),
-                  _buildBio(context),
+                  _buildBio(context, screenSize.height/21),
                   _buildSeparator(screenSize),
-                  SizedBox(height: 10.0),
-                  _buildGetInTouch(context),
-                  SizedBox(height: 8.0),
+                  SizedBox(height: screenSize.height/20),
+                  _buildAssumptions(context, screenSize),
+                  SizedBox(height: screenSize.height/40),
                   _buildButtons(),
+
                 ],
-              ),
             ),
           ),
         ],
       ),
     );
+  }
+  TextStyle titleStyle() {
+    return TextStyle(color: Colors.black.withOpacity(0.5), fontWeight: FontWeight.normal,);
+  }
+
+  TextStyle subtitleStyle() {
+    return TextStyle(color: Colors.black.withOpacity(1.0), fontWeight: FontWeight.normal, fontSize: 18.0,);
   }
 }
