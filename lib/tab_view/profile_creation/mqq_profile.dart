@@ -10,9 +10,9 @@ class MQQProfilePage extends StatefulWidget {
 
 class _MQQProfilePageState extends State<MQQProfilePage> {
   @override
-  final String _fullName = "Dave Plunkett";
+  final String _fullName = "Sarah Meredyth";
   final String _bio =
-      "\"Good morning Dave, Here's your profile:\"";
+      "\"Good morning Sarah, Here's your profile:\"";
   final String _cars = "12";
   final String _posts = "24";
   Widget _buildCoverImage(Size screenSize) {
@@ -49,9 +49,9 @@ class _MQQProfilePageState extends State<MQQProfilePage> {
 
   Widget _buildFullName() {
     TextStyle _nameTextStyle = TextStyle(
-      fontFamily: 'Roboto',
+      fontFamily: Styling.fontAwesomeProFontFamily,
       color: Styling.primaryLight,
-      fontSize: 28.0,
+      fontSize: Styling.getScaledFontSize(context,  28.0),
       fontWeight: FontWeight.w700,
     );
 
@@ -73,15 +73,15 @@ class _MQQProfilePageState extends State<MQQProfilePage> {
 
   Widget _buildStatItem(String label, String count) {
     TextStyle _statLabelTextStyle = TextStyle(
-      fontFamily: 'Roboto',
+      fontFamily: Styling.fontAwesomeProFontFamily,
       color: Colors.black,
-      fontSize: 16.0,
+      fontSize: Styling.getScaledFontSize(context, 16.0),
       fontWeight: FontWeight.w200,
     );
 
     TextStyle _statCountTextStyle = TextStyle(
       color: Colors.black54,
-      fontSize: 24.0,
+      fontSize: Styling.getScaledFontSize(context, 24.0),
       fontWeight: FontWeight.bold,
     );
 
@@ -119,11 +119,11 @@ class _MQQProfilePageState extends State<MQQProfilePage> {
 
   Widget _buildBio(BuildContext context) {
     TextStyle bioTextStyle = TextStyle(
-      fontFamily: 'Spectral',
+      fontFamily: Styling.fontAwesomeProFontFamily,
       fontWeight: FontWeight.w400,//try changing weight to w500 if not thin
       fontStyle: FontStyle.italic,
       color: Color(0xFF799497),
-      fontSize: 16.0,
+      fontSize: Styling.getScaledFontSize(context, 16.0),
     );
 
     return Container(
@@ -155,9 +155,62 @@ class _MQQProfilePageState extends State<MQQProfilePage> {
             "39 Blunkett Avenue\n"
             "Cardiff\n"
             "South Glamorgan",
-        style: TextStyle(fontFamily: Styling.fontAwesomeProFontFamily, fontSize: 16.0),
+        style: TextStyle(fontFamily: Styling.fontAwesomeProFontFamily, fontSize: Styling.getScaledFontSize(context, 16.0)),
       ),
     );
+  }
+
+  Widget _buildAssumptions(BuildContext context, Size screenSize) {
+    return
+      Container(
+        height: screenSize.height/4,
+      child: ListView(
+          children: <Widget>[
+            Container(
+                color: Theme.of(context).scaffoldBackgroundColor,
+                margin: EdgeInsets.all(20),
+                child: SizedBox(
+                    width: screenSize.width * .8,
+                    child: Text(
+                      "Driving License Details",
+                      textAlign: TextAlign.center,
+                      style: Styling.getTestDrivePageHeaderTextStyle(context),
+                    ))),
+            ListTile(
+              title: Text('Name', style: titleStyle(),),
+              subtitle: Text('MORGAN', style: subtitleStyle(),),
+            ),
+            ListTile(
+              title: Text('First Name', style: titleStyle(),),
+              subtitle: Text('SARAH MEREDYTH', style: subtitleStyle(),),
+            ),
+            ListTile(
+              title: Text('Date and place of birth', style: titleStyle(),),
+              subtitle: Text('11.03.1976 UNITED KINGDOM', style: subtitleStyle(),),
+            ),
+            ListTile(
+              title: Text('Date of issue', style: titleStyle(),),
+              subtitle: Text('19.01.2013', style: subtitleStyle(),),
+            ),
+            ListTile(
+              title: Text('Date of expiry', style: titleStyle(),),
+              subtitle: Text('18.01.2023', style: subtitleStyle(),),
+            ),
+            ListTile(
+              title: Text('Issued by', style: titleStyle(),),
+              subtitle: Text('DVLA', style: subtitleStyle(),),
+            ),
+            ListTile(
+              title: Text('Licence number', style: titleStyle(),),
+              subtitle: Text('MORGA753116SM9IL 35', style: subtitleStyle(),),
+            ),
+            ListTile(
+              title: Text('Address', style: titleStyle(),),
+              subtitle: Text('122 BURNS CRESCENT EDINGURGH EH1 9GP', style: subtitleStyle(),),
+            ),
+          ],
+        )
+      );
   }
 
   Widget _buildButtons() {
@@ -220,27 +273,32 @@ class _MQQProfilePageState extends State<MQQProfilePage> {
       body: Stack(
         children: <Widget>[
           _buildCoverImage(screenSize),
-          SafeArea(
-            child: SingleChildScrollView(
-              child: Column(
+          Container(
+              child: ListView(
                 children: <Widget>[
                   SizedBox(height: screenSize.height / 6.4),
                   _buildProfileImage(),
                   _buildFullName(),
                   _buildStatus(context),
-                  _buildStatContainer(),
                   _buildBio(context),
                   _buildSeparator(screenSize),
                   SizedBox(height: 10.0),
-                  _buildGetInTouch(context),
+                  _buildAssumptions(context, screenSize),
                   SizedBox(height: 8.0),
                   _buildButtons(),
+
                 ],
-              ),
             ),
           ),
         ],
       ),
     );
+  }
+  TextStyle titleStyle() {
+    return TextStyle(color: Colors.black.withOpacity(0.5), fontWeight: FontWeight.normal,);
+  }
+
+  TextStyle subtitleStyle() {
+    return TextStyle(color: Colors.black.withOpacity(1.0), fontWeight: FontWeight.normal, fontSize: 18.0,);
   }
 }
