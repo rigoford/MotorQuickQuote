@@ -20,7 +20,7 @@ class _MQQProfilePageState extends State<MQQProfilePage> {
       height: screenSize.height / 2.6,
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage('assets/banner.jpg'),
+          image: AssetImage('assets/cover.jpg'),
           fit: BoxFit.cover,
         ),
       ),
