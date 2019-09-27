@@ -34,7 +34,7 @@ class _MQQProfilePageState extends State<MQQProfilePage> {
         height: 140.0,
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/dave.png'),
+            image: AssetImage('assets/dave.jpg'),
             fit: BoxFit.cover,
           ),
           borderRadius: BorderRadius.circular(80.0),
