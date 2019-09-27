@@ -1,7 +1,6 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:motor_quick_quote/common/styling.dart';
-import 'package:motor_quick_quote/tab_view/vehicle_details/mqq_vehicle_search_results.dart';
 
 import 'mqq_vehicle_reg_scan_screen.dart';
 
