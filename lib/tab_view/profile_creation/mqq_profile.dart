@@ -10,14 +10,14 @@ class MQQProfilePage extends StatefulWidget {
 
 class _MQQProfilePageState extends State<MQQProfilePage> {
   @override
-  final String _fullName = "Sarah Meredyth";
+  final String _fullName = "Sarah Morgan";
   final String _bio =
       "\"Good morning Sarah, Here's your profile:\"";
   final String _cars = "12";
   final String _posts = "24";
   Widget _buildCoverImage(Size screenSize) {
     return Container(
-      height: screenSize.height / 2.6,
+      height: screenSize.height / 3.8,
       decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage('assets/cover.jpg'),
@@ -71,53 +71,7 @@ class _MQQProfilePageState extends State<MQQProfilePage> {
     );
   }
 
-  Widget _buildStatItem(String label, String count) {
-    TextStyle _statLabelTextStyle = TextStyle(
-      fontFamily: Styling.fontAwesomeProFontFamily,
-      color: Colors.black,
-      fontSize: Styling.getScaledFontSize(context, 16.0),
-      fontWeight: FontWeight.w200,
-    );
-
-    TextStyle _statCountTextStyle = TextStyle(
-      color: Colors.black54,
-      fontSize: Styling.getScaledFontSize(context, 24.0),
-      fontWeight: FontWeight.bold,
-    );
-
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        Text(
-          count,
-          style: _statCountTextStyle,
-        ),
-        Text(
-          label,
-          style: _statLabelTextStyle,
-        ),
-      ],
-    );
-  }
-
-  Widget _buildStatContainer() {
-    return Container(
-      height: 60.0,
-      margin: EdgeInsets.only(top: 8.0),
-      decoration: BoxDecoration(
-        color: Color(0xFFEFF4F7),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: <Widget>[
-          _buildStatItem("Cars Scanned", _cars),
-          _buildStatItem("Quote History", _posts),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildBio(BuildContext context) {
+  Widget _buildBio(BuildContext context, screenSize) {
     TextStyle bioTextStyle = TextStyle(
       fontFamily: Styling.fontAwesomeProFontFamily,
       fontWeight: FontWeight.w400,//try changing weight to w500 if not thin
@@ -127,6 +81,7 @@ class _MQQProfilePageState extends State<MQQProfilePage> {
     );
 
     return Container(
+      height: screenSize,
       color: Theme.of(context).scaffoldBackgroundColor,
       padding: EdgeInsets.all(8.0),
       child: Text(
@@ -260,13 +215,14 @@ class _MQQProfilePageState extends State<MQQProfilePage> {
         children: <Widget>[
           _buildCoverImage(screenSize),
           Container(
-              child: ListView(
+              child: Column(
                 children: <Widget>[
-                  SizedBox(height: screenSize.height / 8.7),
+                  SizedBox(height: screenSize.height / 40),
                   _buildProfileImage(),
                   _buildFullName(),
+                  SizedBox(height: screenSize.height/20),
                   _buildStatus(context),
-                  _buildBio(context),
+                  _buildBio(context, screenSize.height/21),
                   _buildSeparator(screenSize),
                   SizedBox(height: screenSize.height/20),
                   _buildAssumptions(context, screenSize),
